@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+
+  "name": "Coffee Extension",
+  "version": "1.0",
+  "description": "Get every background-color from the current tab.",
+
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+
+  "externally_connectable": { "ids": [ "mdgbofblhialfcmglmflnhgbfeppkggc" ] },
+
+  "background": {
+    "scripts": ["event.js"],
+    "persistent": false
+  },
+
+  "permissions": [
+  "management"
+  ],
+
+  "content_scripts":
+  [
+    {
+      "matches": ["*://*/*"],
+      "js": ["Carbs.js"],
+      "js": ["Coffee.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
